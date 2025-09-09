@@ -35,3 +35,13 @@ else
     echo 'Clone de banco de dados foi interrompida'
 fi
 echo ''
+
+echo ''
+read -p 'Configurar os usuarios e grupos? (S/N)' RESPOSTA
+if [ "$RESPOSTA" = "S" ] || [ "$RESPOSTA" = "s" ]; then
+    echo 'Configurando os usuarios e grupos...'
+    source user_config/user_group.sh
+else
+    echo 'Configuração dos usuarios e grupos foi interrompido'
+fi
+echo ''
