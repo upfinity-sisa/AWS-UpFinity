@@ -26,19 +26,15 @@ if ! id "breno-upfinity" &> /dev/null; then
 	echo "breno-upfinity:1234" | sudo chpasswd
 fi
 
-if [ -d "AWS-UpFinity" ]; then
-	rm -rf AWS-UpFinity
-fi
-
-git clone https://github.com/upfinity-sisa/AWS-UpFinity.git
-
-cd ~/AWS-UpFinity
-chmod +x scriptRun.sh
-cd script-java
-chmod +x scriptJava.sh
-cd ~/AWS-UpFinity
-cd script-python
-chmod +x scriptPython.sh
+sudo su - breno-upfinity -c " \
+	if [ -d 'AWS-UpFinity' ]; then \
+		rm -rf AWS-UpFinity \
+	fi \
+	git clone https://github.com/upfinity-sisa/AWS-UpFinity.git \
+	chmod +x ~/AWS-UpFinity/scriptRun.sh \
+	chmod +x ~/AWS-UpFinity/script-java/scriptJava.sh \
+	chmod +x ~/AWS-UpFinity/script-python/scriptPython.sh \
+"
 
 echo "--------------------------------------------------------------"
 echo "             CONFIGURAÇÃO DA INSTÂNCIA CONCLUÍDA"
