@@ -39,3 +39,7 @@ chmod +x scriptJava.sh
 cd ~/AWS-UpFinity
 cd script-python
 chmod +x scriptPython.sh
+
+echo "--------------------------------------------------------------"
+echo "             CONFIGURAÇÃO DA INSTÂNCIA CONCLUÍDA"
+echo "--------------------------------------------------------------"
