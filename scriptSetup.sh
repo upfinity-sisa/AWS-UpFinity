@@ -28,12 +28,12 @@ fi
 
 sudo su - breno-upfinity -c " \
 	if [ -d 'AWS-UpFinity' ]; then \
-		rm -rf AWS-UpFinity \
-	fi \
-	git clone https://github.com/upfinity-sisa/AWS-UpFinity.git \
-	chmod +x ~/AWS-UpFinity/scriptRun.sh \
-	chmod +x ~/AWS-UpFinity/script-java/scriptJava.sh \
-	chmod +x ~/AWS-UpFinity/script-python/scriptPython.sh \
+		rm -rf AWS-UpFinity; \
+	fi; \
+	git clone https://github.com/upfinity-sisa/AWS-UpFinity.git; \
+	chmod +x ~/AWS-UpFinity/scriptRun.sh; \
+	chmod +x ~/AWS-UpFinity/script-java/scriptJava.sh; \
+	chmod +x ~/AWS-UpFinity/script-python/scriptPython.sh; \
 "
 
 echo "--------------------------------------------------------------"
