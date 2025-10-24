@@ -33,6 +33,7 @@ instalarPython(){
 
 instalarPip() {
 	sudo apt install python3-pip -y
+	sudo apt install python3.12-venv -y
 	echo "---------------------------------------"
 	echo "      Pip3 instalado com sucesso"
 	echo "---------------------------------------"
