@@ -32,8 +32,7 @@ instalarPython(){
 }
 
 instalarPip() {
-	sudo apt install python3-pip -y
-	sudo apt install python3.12-venv -y
+	sudo apt install python3-pip python3.12-venv -y
 	echo "---------------------------------------"
 	echo "      Pip3 instalado com sucesso"
 	echo "---------------------------------------"
@@ -41,12 +40,11 @@ instalarPip() {
 }
 
 baixarScript(){
-
-	if [ -d "Python-UpFinity" ]; then
-		rm -rf Python-UpFinity
+	cd ~
+	if [ -d "$HOME/Python-UpFinity" ]; then
+		rm -rf "$HOME/Python-UpFinity"
 	fi
 
-	cd
 	git clone https://github.com/upfinity-sisa/Python-UpFinity.git
 	rodarScript
 }
