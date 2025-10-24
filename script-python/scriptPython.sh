@@ -8,17 +8,34 @@ verificarPython() {
 		echo "-----------------------------"
 		echo "      Python instalado"
 		echo "-----------------------------"
-		baixarScript
+
+		pip3 --version
+		if [ $? = 0  ]; then
+			echo "---------------------------------"
+			echo "         Pip3 instalado"
+			echo "---------------------------------"
+			baixarScript
+		else
+			instalarPip
+		fi
 	else
 		instalarPython
 	fi
 }
 
 instalarPython(){
-	sudo apt install python3 python3-pip git -y
+	sudo apt install python3 -y
 	echo "----------------------------------------"
 	echo "      Python instalado com sucesso"
 	echo "----------------------------------------"
+	baixarScript
+}
+
+instalarPip() {
+	sudo apt install python3-pip
+	echo "---------------------------------------"
+	echo "      Pip3 instalado com sucesso"
+	echo "---------------------------------------"
 	baixarScript
 }
 
