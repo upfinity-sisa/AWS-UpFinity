@@ -8,7 +8,7 @@ verificarPython() {
 		echo "-----------------------------"
 		echo "      Python instalado"
 		echo "-----------------------------"
-		verificarPip3
+		verificarPip
 	else
 		instalarPython
 	fi
