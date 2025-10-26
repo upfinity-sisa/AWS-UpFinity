@@ -8,19 +8,42 @@ verificarPython() {
 		echo "-----------------------------"
 		echo "      Python instalado"
 		echo "-----------------------------"
-
-		pip3 --version
-		if [ $? = 0  ]; then
-			echo "---------------------------------"
-			echo "         Pip3 instalado"
-			echo "---------------------------------"
-			baixarScript
-		else
-			instalarPip
-		fi
+		verificarPip3
 	else
 		instalarPython
 	fi
+}
+
+verificarPip() {
+	pip3 --version
+	if [ $? = 0  ]; then
+		echo "---------------------------------"
+		echo "         Pip3 instalado"
+		echo "---------------------------------"
+		verificarVenv
+	else
+		instalarPip
+	fi
+}
+
+verificarVenv(){
+	if python3 -c "import venv" &> /dev/null; then
+		echo "---------------------------------"
+		echo "         Venv instalado"
+		echo "---------------------------------"
+		baixarScript
+	else
+		instalarVenv
+	fi
+}
+
+instalarVenv() {
+	sudo apt install python3.12-venv -y
+	echo "-------------------------------------------"
+	echo "         Venv instalado com sucesso"
+	echo "-------------------------------------------"
+	baixarScript
+
 }
 
 instalarPython(){
@@ -28,7 +51,7 @@ instalarPython(){
 	echo "----------------------------------------"
 	echo "      Python instalado com sucesso"
 	echo "----------------------------------------"
-	baixarScript
+	verificarPip
 }
 
 instalarPip() {
@@ -36,7 +59,7 @@ instalarPip() {
 	echo "---------------------------------------"
 	echo "      Pip3 instalado com sucesso"
 	echo "---------------------------------------"
-	baixarScript
+	verificarVenv
 }
 
 baixarScript(){
