@@ -59,11 +59,24 @@ baixarScript(){
 }
 
 rodarScript(){
-	cd ~/Python-UpFinity
+	cd ~/Python-UpFinity/script-captura
 	python3 -m venv venv
 	source venv/bin/activate
 	pip3 install -r requirements.txt
-	python3 captura.py
+	if [ -f ".env" ]; then
+		echo "O arquivo .env já existe..."
+		python3 main.py
+	else
+		cat > ".env" << EOF
+		USER_DB=funcUpFinity
+		PASSWORD_DB=UpFinity123
+		HOST_DB=3.212.222.224:3306
+		DATABASE_DB=upfinity
+		EOF
+
+		python3 main.py
+	fi
+
 	deactivate
 }
 
