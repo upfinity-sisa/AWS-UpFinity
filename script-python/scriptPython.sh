@@ -70,7 +70,8 @@ rodarScript(){
 		cat > ".env" << EOF
 USER_DB=funcUpFinity
 PASSWORD_DB=UpFinity123
-HOST_DB=3.212.222.224:3306
+HOST_DB=3.212.222.224
+PORT_DB=3306
 DATABASE_DB=upfinity
 EOF
 		python3 main.py
