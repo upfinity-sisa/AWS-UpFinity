@@ -1,7 +1,5 @@
 #!/bin/bash
 
-sudo apt update && sudo apt upgrade -y
-
 verificarJava() {
 	#verfificando se o java está instalado na máquina
 	java -version
