@@ -72,6 +72,7 @@ HOST_DB=3.212.222.224
 PORT_DB=3306
 DATABASE_DB=upfinity
 EOF
+		nohup python3 capturasSeguranca.py &
 		python3 main.py
 	fi
 	deactivate
